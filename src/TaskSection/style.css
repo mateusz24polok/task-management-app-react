@@ -1,0 +1,27 @@
+.tasksSection {
+    display: grid;
+    grid-template-areas: "title button--hide button--toggleDone" "list list list";
+    grid-template-columns: 1fr auto auto;
+    grid-gap: 20px;
+    align-items: center;
+    background-color: white;
+    margin-top: 20px;
+}
+
+.tasksSection__title {
+    font-size: 22px;
+    border-bottom: 1px solid var(--appGrayColor);
+    padding: 15px;
+    margin: 0;
+    grid-area: title;
+}
+
+@media (max-width:515px) and (orientation:portrait) {
+    .tasksSection__title {
+        text-align: center;
+    }
+    .tasksSection {
+        grid-template-areas: "title" "button--hide" "button--toggleDone" "list";
+        grid-template-columns: 1fr;
+    }
+}
