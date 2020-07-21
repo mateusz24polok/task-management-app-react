@@ -25,6 +25,20 @@ function App() {
     setTasksArray(tasksArray => tasksArray.filter(task => task.id !== id));
   }
 
+  const addNewTask = (description) => {
+    setTasksArray(tasksArray => (
+      [
+        ...tasksArray,
+      {
+        id: tasksArray.length === 0 ? 1 : tasksArray[tasksArray.length -1].id + 1,
+        description,
+        done: false
+      }
+    ]
+    ))
+  }
+
+
   return (
     <Container>
 
@@ -33,7 +47,9 @@ function App() {
       <NewTaskSection
         title="Add new task"
         sectionBody={
-          <Form />
+          <Form
+          addNewTask={addNewTask}
+          />
         }
       />
 
