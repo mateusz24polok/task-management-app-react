@@ -25,16 +25,26 @@ function App() {
     setTasksArray(tasksArray => tasksArray.filter(task => task.id !== id));
   }
 
+  const toggleTaskDone = (id) => {
+    setTasksArray(tasksArray => tasksArray.map(task => {
+      if (task.id === id) {
+        return { ...task, done: !task.done };
+      }
+      return task
+    })
+    );
+  };
+
   const addNewTask = (description) => {
     setTasksArray(tasksArray => (
       [
         ...tasksArray,
-      {
-        id: tasksArray.length === 0 ? 1 : tasksArray[tasksArray.length -1].id + 1,
-        description,
-        done: false
-      }
-    ]
+        {
+          id: tasksArray.length === 0 ? 1 : tasksArray[tasksArray.length - 1].id + 1,
+          description,
+          done: false
+        }
+      ]
     ))
   }
 
@@ -48,7 +58,7 @@ function App() {
         title="Add new task"
         sectionBody={
           <Form
-          addNewTask={addNewTask}
+            addNewTask={addNewTask}
           />
         }
       />
@@ -69,6 +79,7 @@ function App() {
             tasks={tasksArray}
             isDoneTasksHidden={isDoneTasksHidden}
             removeTask={removeTask}
+            toggleTaskDone={toggleTaskDone}
           />
         }
       />
