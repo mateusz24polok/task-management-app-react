@@ -8,20 +8,22 @@ import Header from './Header';
 import Container from './Container';
 import Footer from './Footer';
 
-const tasksArray = [
-  { id: 1, description: "Przejść na Reacta", done: true },
-  { id: 2, description: "Zjeść obiad", done: false },
-];
-
-
 
 function App() {
 
   const [isDoneTasksHidden, setHideDone] = useState(false);
+  const [tasksArray, setTasksArray] = useState([
+    { id: 1, description: "Przejść na Reacta", done: true },
+    { id: 2, description: "Zjeść obiad", done: false },
+  ])
 
   const toggleHideDone = () => {
     setHideDone(isDoneTasksHidden => !isDoneTasksHidden);
   };
+
+  const removeTask = (id) => {
+    setTasksArray(tasksArray => tasksArray.filter(task => task.id !== id));
+  }
 
   return (
     <Container>
@@ -50,6 +52,7 @@ function App() {
           <Tasks
             tasks={tasksArray}
             isDoneTasksHidden={isDoneTasksHidden}
+            removeTask={removeTask}
           />
         }
       />
