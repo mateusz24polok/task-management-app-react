@@ -3,6 +3,20 @@ This is a task management application that allows you manage your daily tasks an
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+![Logo](public/logo--small.png)
+
+# Live Demo
+https://mateusz24polok.github.io/task-management-app-react/
+
+# Technologies used in project:
+- React with useState Hook
+- Create-react-app (CRA)
+- Semantic HTML with BEM convention
+- CSS with Flexbox
+- JavaScript (ES6+)
+- ES6 Modules
+- GoogleFonts
+
 ## Available Scripts
 
 In the project directory, you can run:
