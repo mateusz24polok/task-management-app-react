@@ -12,7 +12,7 @@ import Footer from './Footer';
 function App() {
 
   const [isDoneTasksHidden, setHideDone] = useState(false);
-  const [tasksArray, setTasksArray] = useState(JSON.parse(localStorage.getItem("tasks")))
+  const [tasksArray, setTasksArray] = useState(JSON.parse(localStorage.getItem("tasks")) || [])
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasksArray))
