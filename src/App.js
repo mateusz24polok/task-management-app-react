@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Form from './Form';
 import Tasks from './Tasks';
 import Buttons from './Buttons';
@@ -12,10 +12,11 @@ import Footer from './Footer';
 function App() {
 
   const [isDoneTasksHidden, setHideDone] = useState(false);
-  const [tasksArray, setTasksArray] = useState([
-    { id: 1, description: "Przejść na Reacta", done: true },
-    { id: 2, description: "Zjeść obiad", done: false },
-  ])
+  const [tasksArray, setTasksArray] = useState(JSON.parse(localStorage.getItem("tasks")))
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasksArray))
+  }, [tasksArray])
 
   const toggleHideDone = () => {
     setHideDone(isDoneTasksHidden => !isDoneTasksHidden);
@@ -35,9 +36,9 @@ function App() {
     );
   };
 
-  const setAllTasksDone = ()=>{
-    setTasksArray(tasksArray=> tasksArray.map(task=>{
-      return{
+  const setAllTasksDone = () => {
+    setTasksArray(tasksArray => tasksArray.map(task => {
+      return {
         ...task,
         done: true,
       }
