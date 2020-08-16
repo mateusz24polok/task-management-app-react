@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Form from './Form';
 import Tasks from './Tasks';
 import Buttons from './Buttons';
@@ -17,6 +17,12 @@ function App() {
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasksArray))
   }, [tasksArray])
+
+  const inputRef = useRef(null);
+
+  const inputFocus = () =>{
+    inputRef.current.focus();
+  };
 
   const toggleHideDone = () => {
     setHideDone(isDoneTasksHidden => !isDoneTasksHidden);
@@ -56,6 +62,7 @@ function App() {
         }
       ]
     ))
+    inputFocus();
   }
 
 
@@ -69,6 +76,7 @@ function App() {
         sectionBody={
           <Form
             addNewTask={addNewTask}
+            inputRef = {inputRef}
           />
         }
       />
