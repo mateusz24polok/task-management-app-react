@@ -6,7 +6,7 @@ export const StyledSection = styled.section`
 
 export const SectionTitle = styled.h1`
     font-size: 22px;
-    border-bottom: 1px solid var(--appGrayColor);
+    border-bottom: 1px solid rgb(250,250,250);
     padding: 15px;
     margin-bottom: 0;
 
