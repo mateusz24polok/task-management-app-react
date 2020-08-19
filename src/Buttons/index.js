@@ -1,22 +1,23 @@
 import React from 'react';
-import './style.css';
+import { LineButton } from "./styled";
 
 const Buttons = ({ tasks, isDoneTasksHidden, toggleHideDone, setAllTasksDone }) => (
     tasks.length > 0 && (
         <>
-            <button
-                className="tasksSection__button tasksSection__button--hide"
+            <LineButton
+                hide
                 onClick={toggleHideDone}
             >
                 {isDoneTasksHidden ? "Show done tasks" : "Hide done tasks"}
-            </button>
-            <button
-                className="tasksSection__button tasksSection__button--toggleDone"
+            </LineButton>
+
+            <LineButton
+                toggleDone
                 disabled={tasks.every(({ done }) => done)}
                 onClick={setAllTasksDone}
             >
                 Set all tasks done
-            </button>
+            </LineButton>
         </>
     )
 );
