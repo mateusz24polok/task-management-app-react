@@ -1,12 +1,12 @@
 import React from "react";
-import "./style.css";
+import { StyledSection, SectionTitle } from "./styled";
 
-const TaskSection = ({title, extraHeaderContent, sectionBody}) => (
-    <section className="tasksSection">
-        <h2 className="tasksSection__title">{title}</h2>
+const TaskSection = ({ title, extraHeaderContent, sectionBody }) => (
+    <StyledSection>
+        <SectionTitle>{title}</SectionTitle>
         {extraHeaderContent}
         {sectionBody}
-    </section>
+    </StyledSection>
 );
 
 export default TaskSection;
