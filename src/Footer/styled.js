@@ -1,14 +1,14 @@
-.footer {
+import styled from "styled-components";
+
+export const StyledFooter = styled.footer`
     padding: 15px;
     font-size: 18px;
     text-align: center;
     background-color: teal;
     color: white;
-}
 
-@media (max-width:515px) and (orientation:portrait) {
-    .footer {
+    @media (max-width:515px) and (orientation:portrait) {
         font-size: 14px;
         padding: 10px;
-    }
 }
+`;
