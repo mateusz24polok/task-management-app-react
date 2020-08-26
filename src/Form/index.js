@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { NewTaskForm, NewTaskInput, NewTaskButton } from "./styled";
 
-const Form = ({ addNewTask, inputRef }) => {
+const Form = ({ addNewTask }) => {
     const [taskDescription, setTaskDescription] = useState("");
+    const inputRef = useRef(null);
+
+    const inputFocus = () => {
+        inputRef.current.focus();
+    };
 
     const onInputChange = (event) => {
         setTaskDescription(event.target.value)
@@ -13,6 +18,7 @@ const Form = ({ addNewTask, inputRef }) => {
             addNewTask(taskDescription.trim());
         }
         setTaskDescription("");
+        inputFocus();
     }
     return (
         <NewTaskForm onSubmit={onFormSubmit}>

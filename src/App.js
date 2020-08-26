@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import Form from './Form';
 import Tasks from './Tasks';
 import Buttons from './Buttons';
@@ -7,63 +7,28 @@ import NewTaskSection from './NewTaskSection';
 import Header from './Header';
 import Container from './Container';
 import Footer from './Footer';
+import { useTasks } from "./useTasks";
 
 
 function App() {
 
   const [isDoneTasksHidden, setHideDone] = useState(false);
-  const [tasksArray, setTasksArray] = useState(JSON.parse(localStorage.getItem("tasks")) || [])
 
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasksArray))
-  }, [tasksArray])
-
-  const inputRef = useRef(null);
-
-  const inputFocus = () =>{
-    inputRef.current.focus();
-  };
 
   const toggleHideDone = () => {
     setHideDone(isDoneTasksHidden => !isDoneTasksHidden);
   };
 
-  const removeTask = (id) => {
-    setTasksArray(tasksArray => tasksArray.filter(task => task.id !== id));
-  }
 
-  const toggleTaskDone = (id) => {
-    setTasksArray(tasksArray => tasksArray.map(task => {
-      if (task.id === id) {
-        return { ...task, done: !task.done };
-      }
-      return task
-    })
-    );
-  };
+  const {
+    tasksArray,
+    removeTask,
+    toggleTaskDone,
+    setAllTasksDone,
+    addNewTask
+   } = useTasks();
 
-  const setAllTasksDone = () => {
-    setTasksArray(tasksArray => tasksArray.map(task => {
-      return {
-        ...task,
-        done: true,
-      }
-    }))
-  }
 
-  const addNewTask = (description) => {
-    setTasksArray(tasksArray => (
-      [
-        ...tasksArray,
-        {
-          id: tasksArray.length === 0 ? 1 : tasksArray[tasksArray.length - 1].id + 1,
-          description,
-          done: false
-        }
-      ]
-    ))
-    inputFocus();
-  }
 
 
   return (
@@ -76,7 +41,6 @@ function App() {
         sectionBody={
           <Form
             addNewTask={addNewTask}
-            inputRef = {inputRef}
           />
         }
       />
