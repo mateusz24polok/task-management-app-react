@@ -10,7 +10,7 @@ export const TasksList = styled.ul`
 export const TaskItem = styled.li`
     display: flex;
     align-items: center;
-    border-bottom: 1px solid rgb(250,250,250);
+    border-bottom: 1px solid ${({ theme }) => theme.color.alabaster};
 
     ${({ hidden }) => (hidden && css`
         display: none;
@@ -33,23 +33,23 @@ export const Button = styled.button`
     padding: 3px;
     border: none;
     cursor: pointer;
-    color: white;
+    color: ${({ theme }) => theme.color.white};
     transition: background-color 0.15s;
 
     ${({ remove }) => (remove && css`
-        background-color: red;
+        background-color: ${({ theme }) => theme.color.red};
         font-weight: 700;
 
         &:hover{
-            background-color: hsl(0, 100%, 65%);
+            background-color: ${({ theme }) => theme.color.lightRed};
         }
     `)}
 
     ${({ done }) => (done && css`
-        background-color: green;
+        background-color: ${({ theme }) => theme.color.green};
 
         &:hover{
-            background-color: hsl(120, 100%, 30%);
+            background-color: ${({ theme }) => theme.color.lightGreen};
         }
     `)}
 `;

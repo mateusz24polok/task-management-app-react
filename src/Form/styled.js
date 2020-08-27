@@ -23,8 +23,8 @@ export const NewTaskInput = styled.input`
 
 export const NewTaskButton = styled.button`
     flex-basis: 100px;
-    background-color: teal;
-    color: white;
+    background-color: ${({ theme }) => theme.color.teal};
+    color: ${({theme})=>theme.color.white};
     padding: 5px;
     border: none;
     margin-left: 10px;
@@ -32,7 +32,7 @@ export const NewTaskButton = styled.button`
     transition: background-color 0.2s ease-in, transform 0.15s ease;
 
     &:hover{
-        background-color: #009999;
+        background-color: ${({theme})=>theme.color.lightTeal};
         transform: scale(1.1);
     }
 

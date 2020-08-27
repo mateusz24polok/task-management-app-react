@@ -1,17 +1,17 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 
 export const LineButton = styled.button`
-    background-color: transparent;
-    color: teal;
+    background-color: ${({ theme }) => theme.color.transparent};
+    color: ${({ theme }) => theme.color.teal};
     border: none;
     cursor: pointer;
 
     &:hover{
-        color: #009999;
+        color: ${({ theme }) => theme.color.lightTeal};
     }
 
     :disabled{
-        color: gray;
+        color: ${({ theme }) => theme.color.gray};
         cursor: default;
     }
 
