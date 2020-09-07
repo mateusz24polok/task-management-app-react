@@ -32,26 +32,11 @@ export const useTasks = () => {
         }))
     }
 
-    const addNewTask = (description) => {
-        setTasksArray(tasksArray => (
-            [
-                ...tasksArray,
-                {
-                    id: tasksArray.length === 0 ? 1 : tasksArray[tasksArray.length - 1].id + 1,
-                    description,
-                    done: false
-                }
-            ]
-        ))
-    }
-
     return (
         {
-            tasksArray,
             removeTask,
             toggleTaskDone,
             setAllTasksDone,
-            addNewTask
         }
     )
 };

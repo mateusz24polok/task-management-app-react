@@ -21,12 +21,10 @@ function App() {
 
 
   const {
-    tasksArray,
     removeTask,
     toggleTaskDone,
     setAllTasksDone,
-    addNewTask
-   } = useTasks();
+  } = useTasks();
 
 
 
@@ -39,9 +37,7 @@ function App() {
       <NewTaskSection
         title="Add new task"
         sectionBody={
-          <Form
-            addNewTask={addNewTask}
-          />
+          <Form />
         }
       />
 
@@ -52,14 +48,12 @@ function App() {
           <Buttons
             toggleHideDone={toggleHideDone}
             setAllTasksDone={setAllTasksDone}
-            tasks={tasksArray}
             isDoneTasksHidden={isDoneTasksHidden}
           />
         }
 
         sectionBody={
           <Tasks
-            tasks={tasksArray}
             isDoneTasksHidden={isDoneTasksHidden}
             removeTask={removeTask}
             toggleTaskDone={toggleTaskDone}
