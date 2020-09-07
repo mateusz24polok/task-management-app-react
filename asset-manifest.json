@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/task-management-app-react/static/js/main.d9ae7fb1.chunk.js",
-    "main.js.map": "/task-management-app-react/static/js/main.d9ae7fb1.chunk.js.map",
+    "main.js": "/task-management-app-react/static/js/main.aca34a15.chunk.js",
+    "main.js.map": "/task-management-app-react/static/js/main.aca34a15.chunk.js.map",
     "runtime-main.js": "/task-management-app-react/static/js/runtime-main.b9a3b849.js",
     "runtime-main.js.map": "/task-management-app-react/static/js/runtime-main.b9a3b849.js.map",
-    "static/js/2.30ed24f7.chunk.js": "/task-management-app-react/static/js/2.30ed24f7.chunk.js",
-    "static/js/2.30ed24f7.chunk.js.map": "/task-management-app-react/static/js/2.30ed24f7.chunk.js.map",
+    "static/js/2.8e18ce6b.chunk.js": "/task-management-app-react/static/js/2.8e18ce6b.chunk.js",
+    "static/js/2.8e18ce6b.chunk.js.map": "/task-management-app-react/static/js/2.8e18ce6b.chunk.js.map",
     "index.html": "/task-management-app-react/index.html",
-    "precache-manifest.3fbbafc180e4cf8d7c7d5b442f41a58b.js": "/task-management-app-react/precache-manifest.3fbbafc180e4cf8d7c7d5b442f41a58b.js",
+    "precache-manifest.bb11f5567f9ca3a354239fb81a877f1f.js": "/task-management-app-react/precache-manifest.bb11f5567f9ca3a354239fb81a877f1f.js",
     "service-worker.js": "/task-management-app-react/service-worker.js",
-    "static/js/2.30ed24f7.chunk.js.LICENSE.txt": "/task-management-app-react/static/js/2.30ed24f7.chunk.js.LICENSE.txt"
+    "static/js/2.8e18ce6b.chunk.js.LICENSE.txt": "/task-management-app-react/static/js/2.8e18ce6b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b9a3b849.js",
-    "static/js/2.30ed24f7.chunk.js",
-    "static/js/main.d9ae7fb1.chunk.js"
+    "static/js/2.8e18ce6b.chunk.js",
+    "static/js/main.aca34a15.chunk.js"
   ]
 }
