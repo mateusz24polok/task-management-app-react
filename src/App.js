@@ -21,7 +21,6 @@ function App() {
 
 
   const {
-    removeTask,
     setAllTasksDone,
   } = useTasks();
 
@@ -54,7 +53,6 @@ function App() {
         sectionBody={
           <Tasks
             isDoneTasksHidden={isDoneTasksHidden}
-            removeTask={removeTask}
           />
         }
       />

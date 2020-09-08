@@ -5,13 +5,7 @@ export const useTasks = () => {
 
     useEffect(() => {
         localStorage.setItem("tasks", JSON.stringify(tasksArray))
-    }, [tasksArray])
-
-
-
-    const removeTask = (id) => {
-        setTasksArray(tasksArray => tasksArray.filter(task => task.id !== id));
-    }
+    }, [tasksArray]);
 
     const setAllTasksDone = () => {
         setTasksArray(tasksArray => tasksArray.map(task => {
@@ -24,7 +18,6 @@ export const useTasks = () => {
 
     return (
         {
-            removeTask,
             setAllTasksDone,
         }
     )

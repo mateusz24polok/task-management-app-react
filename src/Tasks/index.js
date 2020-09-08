@@ -1,12 +1,11 @@
 import React from "react";
 import { TasksList, TaskItem, TaskContent, Button } from "./styled";
 import { useSelector, useDispatch } from "react-redux";
-import { selectTasks, toggleTaskDone } from "./tasksSlice";
+import { selectTasks, toggleTaskDone, removeTask } from "./tasksSlice";
 
-const Tasks = ({ isDoneTasksHidden, removeTask }) => {
+const Tasks = ({ isDoneTasksHidden }) => {
     const { tasks } = useSelector(selectTasks);
     const dispatch = useDispatch();
-    console.log(tasks);
     return (
         <TasksList>
             {tasks.map(task => (
@@ -24,7 +23,7 @@ const Tasks = ({ isDoneTasksHidden, removeTask }) => {
                     <TaskContent done={task.done}>{task.description}</TaskContent>
 
                     <Button
-                        onClick={() => removeTask(task.id)}
+                        onClick={() => dispatch(removeTask(task.id))}
                         remove
                     >
                         🗑
