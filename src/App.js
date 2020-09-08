@@ -22,7 +22,6 @@ function App() {
 
   const {
     removeTask,
-    toggleTaskDone,
     setAllTasksDone,
   } = useTasks();
 
@@ -56,7 +55,6 @@ function App() {
           <Tasks
             isDoneTasksHidden={isDoneTasksHidden}
             removeTask={removeTask}
-            toggleTaskDone={toggleTaskDone}
           />
         }
       />
