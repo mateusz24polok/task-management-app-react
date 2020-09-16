@@ -33,7 +33,6 @@ const tasksSlice = createSlice({
 
         removeTask: ({ tasks }, action) => {
             const removeTaskIndex = tasks.findIndex(task => task.id === action.payload);
-            console.log(removeTaskIndex);
             tasks.splice(removeTaskIndex, 1);
         },
 
