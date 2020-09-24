@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineButton } from "./styled";
+import { StyledLineButton } from "./styled";
 import { useSelector, useDispatch } from "react-redux";
 import { selectTasks, toggleHideDone, setAllTasksDone } from "../Tasks/tasksSlice";
 
@@ -9,20 +9,20 @@ const Buttons = () => {
     return (
         tasks.length > 0 && (
             <>
-                <LineButton
+                <StyledLineButton
                     hide
                     onClick={() => dispatch(toggleHideDone())}
                 >
                     {isDoneTasksHidden ? "Show done tasks" : "Hide done tasks"}
-                </LineButton>
+                </StyledLineButton>
 
-                <LineButton
+                <StyledLineButton
                     toggleDone
                     disabled={tasks.every(({ done }) => done)}
                     onClick={() => dispatch(setAllTasksDone())}
                 >
                     Set all tasks done
-            </LineButton>
+            </StyledLineButton>
             </>
         )
     );

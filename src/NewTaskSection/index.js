@@ -1,9 +1,12 @@
 import React from 'react';
-import { StyledSection, SectionTitle } from "./styled"
+import { StyledSection, Title, StyledLineButton, TitleSection } from "./styled"
 
 const NewTaskSection = ({ title, sectionBody }) => (
     <StyledSection>
-        <SectionTitle>{title}</SectionTitle>
+        <TitleSection>
+            <Title>{title}</Title>
+            <StyledLineButton>Get Sample Tasks</StyledLineButton>
+        </TitleSection>
         {sectionBody}
     </StyledSection>
 );

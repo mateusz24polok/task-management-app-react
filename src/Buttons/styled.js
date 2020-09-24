@@ -1,20 +1,7 @@
 import styled, { css } from "styled-components";
+import { LineButton } from "../LineButton/styled";
 
-export const LineButton = styled.button`
-    background-color: ${({ theme }) => theme.color.transparent};
-    color: ${({ theme }) => theme.color.teal};
-    border: none;
-    cursor: pointer;
-
-    &:hover{
-        color: ${({ theme }) => theme.color.lightTeal};
-    }
-
-    :disabled{
-        color: ${({ theme }) => theme.color.gray};
-        cursor: default;
-    }
-
+export const StyledLineButton = styled(LineButton)`
     ${({ hide }) => (hide && css`
         grid-area: button--hide;
     `)}
