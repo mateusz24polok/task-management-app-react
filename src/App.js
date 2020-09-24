@@ -1,12 +1,12 @@
 import React from 'react';
-import Form from './Form';
-import Tasks from './Tasks';
-import Buttons from './Buttons';
-import TaskSection from './TaskSection';
-import NewTaskSection from './NewTaskSection';
-import Header from './Header';
-import Container from './Container';
-import Footer from './Footer';
+import Form from './components/Form';
+import Tasks from './components/Tasks';
+import Buttons from './components/Buttons';
+import TaskSection from './components/TaskSection';
+import NewTaskSection from './components/NewTaskSection';
+import Header from './components/Header';
+import Container from './components/Container';
+import Footer from './components/Footer';
 
 
 function App() {

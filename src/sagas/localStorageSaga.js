@@ -1,6 +1,6 @@
 import { call, takeEvery, select } from "redux-saga/effects";
-import { selectTasks } from "../Tasks/tasksSlice";
-import { saveTasksInLocalStorage } from "../Tasks/localStorageFunctions";
+import { selectTasks } from "../components/Tasks/tasksSlice";
+import { saveTasksInLocalStorage } from "../components/Tasks/localStorageFunctions";
 
 function* setLocalStorageTask() {
     yield console.log("Jesteśmy w sadze");
