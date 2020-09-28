@@ -4,6 +4,7 @@ import Tasks from './components/Tasks';
 import Buttons from './components/Buttons';
 import TaskSection from './components/TaskSection';
 import NewTaskSection from './components/NewTaskSection';
+import PageNavigation from "./components/PageNavigation";
 import Header from './components/Header';
 import Container from './components/Container';
 import Footer from './components/Footer';
@@ -15,6 +16,8 @@ function App() {
     <Container>
 
       <Header title="Task management application" />
+
+      <PageNavigation navigationItems={["Tasks", "About author"]} />
 
       <NewTaskSection
         title="Add new task"
