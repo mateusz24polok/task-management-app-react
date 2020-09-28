@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigation, NavigationList, NavigationItem } from "./styled";
 import PropTypes from "prop-types"
+import {NavLink} from "react-router-dom";
 
 const PageNavigation = ({ navigationItems }) => (
     <Navigation>
@@ -9,7 +10,7 @@ const PageNavigation = ({ navigationItems }) => (
                 ?
                 (navigationItems.map(navItem => (
                     <NavigationItem key={navItem}>
-                        <a href="#">{navItem}</a>
+                        <NavLink to={navItem.path}>{navItem.name}</NavLink>
                     </NavigationItem>)))
                 : null}
         </NavigationList>

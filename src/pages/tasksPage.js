@@ -1,12 +1,12 @@
 import React from 'react';
-import Form from '../components/Form/';
+import Form from '../components/Form';
 import Tasks from '../components/Tasks';
 import Buttons from '../components/Buttons';
 import TaskSection from '../components/TaskSection';
 import NewTaskSection from '../components/NewTaskSection';
 
 
-const tasksPage = () => (
+const TasksPage = () => (
     <>
 
         <NewTaskSection
@@ -24,4 +24,4 @@ const tasksPage = () => (
 
 );
 
-export default tasksPage;
+export default TasksPage;

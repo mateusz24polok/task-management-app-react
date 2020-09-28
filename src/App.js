@@ -1,38 +1,47 @@
 import React from 'react';
-import Form from './components/Form';
-import Tasks from './components/Tasks';
-import Buttons from './components/Buttons';
-import TaskSection from './components/TaskSection';
-import NewTaskSection from './components/NewTaskSection';
 import PageNavigation from "./components/PageNavigation";
 import Header from './components/Header';
 import Container from './components/Container';
 import Footer from './components/Footer';
+import TasksPage from './pages/TasksPage';
+import AboutAuthorPage from './pages/AboutAuthorPage';
+import { BrowserRouter, Route, Switch } from "react-router-dom"
 
+const navigationItems = [
+  {
+    name: "Tasks",
+    path: "/",
+    id: 0,
+  },
+  {
+    name: "About Author",
+    path: "/author",
+    id: 1,
+  },
+]
 
-function App() {
+const App = () => {
 
   return (
-    <Container>
+    <BrowserRouter>
+      <Container>
 
-      <Header title="Task management application" />
+        <Header title="Task management application" />
 
-      <PageNavigation navigationItems={["Tasks", "About author"]} />
+        <PageNavigation navigationItems={navigationItems} />
 
-      <NewTaskSection
-        title="Add new task"
-        sectionBody={<Form />}
-      />
+        <Switch>
+          <Route exact path="/" component={TasksPage} />
+          <Route path="/author" component={AboutAuthorPage} />
+          <Route>
+            <p>Error Page</p>
+          </Route>
+        </Switch>
 
-      <TaskSection
-        title="Tasks List"
-        extraHeaderContent={<Buttons />}
-        sectionBody={<Tasks />}
-      />
+        <Footer title="Task management application by Mateusz Polok 2020" />
 
-      <Footer title="Task management application by Mateusz Polok 2020" />
-
-    </Container>
+      </Container>
+    </BrowserRouter>
   );
 }
 
