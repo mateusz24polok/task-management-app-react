@@ -11,11 +11,13 @@ const navigationItems = [
   {
     name: "Tasks",
     path: "/",
+    exact: true,
     id: 0,
   },
   {
     name: "About Author",
     path: "/author",
+    exact: false,
     id: 1,
   },
 ]
