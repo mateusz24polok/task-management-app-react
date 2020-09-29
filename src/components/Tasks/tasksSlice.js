@@ -71,4 +71,11 @@ export const {
 export const selectTasks = state => state.tasks;
 export const selectExampleTaskLoading = state => state.tasks.exampleTasksLoading;
 export const selectExampleTaskLoadingError = state => state.tasks.exampleTasksLoadingError;
+export const selectQueryTask = (state, query) => {
+    if (!query || query.trim() === "") {
+        return selectTasks(state).tasks
+    }
+    const tasks = selectTasks(state).tasks.filter(({ description }) => description.toLowerCase().includes(query.toLowerCase().trim()));
+    return tasks;
+}
 export default tasksSlice.reducer; 

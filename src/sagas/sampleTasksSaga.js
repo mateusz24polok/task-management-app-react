@@ -3,7 +3,7 @@ import { getSampleTasks, setExampleTasks, getSampleTasksErrorHandle, resetExampl
 
 const fetchSampleTasks = async () => {
     try {
-        const response = await fetch("task-management-app-react/sampleTasks.json");
+        const response = await fetch("sampleTasks.json");
         if (!response.ok) {
             throw new Error(response.statusText);
         }
