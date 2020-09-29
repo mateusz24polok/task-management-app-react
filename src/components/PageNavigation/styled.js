@@ -28,9 +28,9 @@ export const NavigationItem = styled.li`
     margin: 10px 40px;
 `;
 
-export const StyledNavLink = styled(NavLink).attrs(props => ({
+export const StyledNavLink = styled(NavLink).attrs({
     activeClassName: "active",
-}))`
+})`
     text-decoration: none;
     color: ${({ theme }) => theme.color.white};
 

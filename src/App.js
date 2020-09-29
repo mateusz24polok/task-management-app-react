@@ -25,7 +25,7 @@ const navigationItems = [
 const App = () => {
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="task-management-app-react">
       <Container>
 
         <Header title="Task management application" />
