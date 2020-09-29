@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledSection = styled.section`
     display: grid;
@@ -8,6 +8,11 @@ export const StyledSection = styled.section`
     align-items: center;
     background-color: ${({ theme }) => theme.color.white};
     margin-top: 20px;
+
+    ${({ blockDisplay }) => blockDisplay && css`
+        display: block;
+        padding: 30px;
+    `}
 
     @media (max-width:515px) and (orientation:portrait) {
         grid-template-areas: "title" "button--hide" "button--toggleDone" "list";
@@ -21,6 +26,10 @@ export const SectionTitle = styled.h2`
     padding: 15px;
     margin: 0;
     grid-area: title;
+
+    ${({ centerTitle }) => centerTitle && css`
+        text-align: center;
+    `}
 
     @media (max-width:515px) and (orientation:portrait) {
         text-align: center;

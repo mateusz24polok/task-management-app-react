@@ -2,7 +2,7 @@ import React from 'react';
 import Form from '../components/Form';
 import Tasks from '../components/Tasks';
 import Buttons from '../components/Buttons';
-import TaskSection from '../components/TaskSection';
+import Section from '../components/Section';
 import NewTaskSection from '../components/NewTaskSection';
 
 
@@ -14,7 +14,7 @@ const TasksPage = () => (
             sectionBody={<Form />}
         />
 
-        <TaskSection
+        <Section
             title="Tasks List"
             extraHeaderContent={<Buttons />}
             sectionBody={<Tasks />}

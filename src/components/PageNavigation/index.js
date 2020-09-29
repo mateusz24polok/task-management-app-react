@@ -9,7 +9,7 @@ const PageNavigation = ({ navigationItems }) => (
             {navigationItems && navigationItems.length
                 ?
                 (navigationItems.map(navItem => (
-                    <NavigationItem key={navItem}>
+                    <NavigationItem key={navItem.id}>
                         <NavLink to={navItem.path}>{navItem.name}</NavLink>
                     </NavigationItem>)))
                 : null}

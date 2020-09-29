@@ -14,9 +14,15 @@ export const Navigation = styled.nav`
 `;
 
 export const NavigationList = styled.ul`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     list-style: none;
+    margin: 0;
+    padding: 0;
 `;
 
 export const NavigationItem = styled.li`
     color: blue;
+    margin: 10px 40px;
 `;
