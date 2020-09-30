@@ -7,6 +7,7 @@ const AboutAuthorPage = () => (
     <Section
         blockDisplay
         centerTitle
+        padding = "0px 30px 30px"
         title="About Author"
         sectionBody={aboutMe}
     />

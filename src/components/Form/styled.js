@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const NewTaskForm = styled.form`
+export const StyledForm = styled.form`
     display: flex;
     padding: 15px;
 
@@ -9,7 +9,7 @@ export const NewTaskForm = styled.form`
 }
 `;
 
-export const NewTaskInput = styled.input`
+export const Input = styled.input`
     flex-grow: 1;
     padding: 10px;
     font-size: 20px;
@@ -21,7 +21,7 @@ export const NewTaskInput = styled.input`
 }
 `;
 
-export const NewTaskButton = styled.button`
+export const Button = styled.button`
     flex-basis: 100px;
     background-color: ${({ theme }) => theme.color.teal};
     color: ${({theme})=>theme.color.white};

@@ -8,10 +8,10 @@ export const StyledSection = styled.section`
     align-items: center;
     background-color: ${({ theme }) => theme.color.white};
     margin-top: 20px;
+    padding: ${({ padding }) => padding};
 
     ${({ blockDisplay }) => blockDisplay && css`
         display: block;
-        padding: 30px;
     `}
 
     @media (max-width:515px) and (orientation:portrait) {
